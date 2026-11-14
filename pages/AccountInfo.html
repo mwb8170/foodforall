@@ -1,3 +1,6 @@
+<html>
+<body>
+
 <h1> Account Information Page</h1>
 <p> You may update your current username and password here.</p>
 
@@ -6,11 +9,10 @@
 <input type = "text" id = "update-username" name = "Username">
 <br>
 
-<label for = "Updated-password">Enter Your Updated Password</label>
+<label for = "updated-password">Enter Your Updated Password</label>
 <br>
 <input type = "Password" id = "updated-password" name = "Password">
 <br>
-<a href = "https://mwb8170.github.io/foodforall/"><button> Submit new changes </button></a>
 
 <button onclick="setTempCookie()">Submit new changes</button>
 <button onclick="history.back()">Go Back</button>
@@ -18,10 +20,10 @@
 
 <script>
   window.onload = function() {
-    const cookies = document.cookie.split("; ");
+    const cookies = document.cookie.split(";");
 
     for (let i = 0; i < cookies.length; i++) {
-      const parts = cookies[i].split("=");
+      const parts = cookies[i].trim().split("=");
 
       if (parts[0] === "savedUsername") {
         document.getElementById("update-username").value = parts[1];
@@ -35,5 +37,9 @@
   function setTempCookie() {
     document.cookie = "savedUsername=" + document.getElementById("update-username").value + "; path=/";
     document.cookie = "savedPassword=" + document.getElementById("updated-password").value + "; path=/";
+    window.location.href = "https://mwb8170.github.io/foodforall/";
   }
 </script>
+
+</body>
+</html>

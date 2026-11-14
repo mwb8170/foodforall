@@ -1,3 +1,6 @@
+<html>
+<body>
+
 <h1> Please log in here. </h1>
 
 <label for = "login-username">Enter Your Username</label>
@@ -7,9 +10,8 @@
 <label for = "login-password">Enter Your Password</label>
 <br>
 <input type = "Password" id = "login-password" name = "Password">
-<button onclick="setTempCookie()">Set username and password</button>
 <br>
-<a href = "https://mwb8170.github.io/foodforall/"><button> Login </button></a>
+<a href = "https://github.io"><button onclick="setTempCookie()"> Login </button></a>
 <br>
 <br>
 <h2> Don't have an account? Create one here. </h2>
@@ -18,22 +20,28 @@
 <label for = "create-username">Enter Your Username</label>
 <br>
 <input type = "text" id = "create-username" name = "Username">
-<button onclick="setTempCookie()">Set username and password</button>
 <br>
 <label for = "create-password">Enter Your Password</label>
 <br>
 <input type = "Password" id = "create-password" name = "Password">
-<button onclick="setTempCookie()">Set username and password</button>
 <br>
-<a href = "https://mwb8170.github.io/foodforall/"> <button> Create Account </button></a>
+<a href = "https://github.io"><button onclick="setCreateCookie()"> Login </button></a>
 
 <button onclick="history.back()">Go Back</button>
+
 
 <script>
  function setTempCookie() {
 
-    document.cookie = "savedUsername=; " + document.getElementById(login-username) + " path=/";
-    document.cookie = "savedPassword=;" + document.getElementById(login-password) + "path=/";
+    document.cookie = "savedUsername=" + document.getElementById("login-username").value + "; path=/";
+    document.cookie = "savedPassword=" + document.getElementById("login-password").value + "; path=/";
+
+ }
+
+ function setCreateCookie() {
+
+    document.cookie = "savedUsername=" + document.getElementById("create-username").value + "; path=/";
+    document.cookie = "savedPassword=" + document.getElementById("create-password").value + "; path=/";
 
  }
 </script>
