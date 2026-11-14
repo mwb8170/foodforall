@@ -4,10 +4,10 @@
 <br>
 <input type = "text" id = "login-username" name = "Username">
 <br>
-
 <label for = "login-password">Enter Your Password</label>
 <br>
 <input type = "Password" id = "login-password" name = "Password">
+<button onclick="setTempCookie()">Set username and password</button>
 <br>
 <a href = "https://mwb8170.github.io/foodforall/"><button> Login </button></a>
 <br>
@@ -18,11 +18,25 @@
 <label for = "create-username">Enter Your Username</label>
 <br>
 <input type = "text" id = "create-username" name = "Username">
+<button onclick="setTempCookie()">Set username and password</button>
 <br>
 <label for = "create-password">Enter Your Password</label>
 <br>
 <input type = "Password" id = "create-password" name = "Password">
+<button onclick="setTempCookie()">Set username and password</button>
 <br>
 <a href = "https://mwb8170.github.io/foodforall/"> <button> Create Account </button></a>
 
 <button onclick="history.back()">Go Back</button>
+
+<script>
+ function setTempCookie() {
+
+    document.cookie = "savedUsername=; " + document.getElementById(login-username) + " path=/";
+    document.cookie = "savedPassword=;" + document.getElementById(login-password) + "path=/";
+
+ }
+</script>
+
+</body>
+</html>
